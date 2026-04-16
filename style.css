@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+body {
+  background-color: #06171e;
+}
+header,
+section,
+footer {
+  padding: 0 100px;
+}
+header {
+  display: flex;
+  align-items: center;
+  background: #09212a;
+  height: 81px;
+}
+.title {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: white;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 15%;
+}
+section h1 {
+  font-family: "Figtree";
+  font-weight: 800;
+  color: white;
+  font-size: 56px;
+  text-align: center;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+img {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #124658;
+  border-radius: 16px;
+  margin: 25px 10px;
+  transition: all 0.5s ease;
+}
+img:hover {
+  transform: scale(1.1);
+  border: 2px solid #6bc1e1;
+}
+footer {
+  margin-top: 100px;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 128px;
+  background-color: #09212a;
+}
+footer p {
+  color: #99acb3;
+}
+.footer_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+dialog {
+  margin: auto;
+  max-width: fit-content;
+  height: fit-content;
+
+  border-radius: 40px;
+  padding: 40px;
+  background-color: #09212a;
+}
+.dialogTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dialogTop p {
+  font-family: "Figtree";
+  font-size: 24px;
+  font-weight: 700;
+  color: aliceblue;
+}
+.dialogTop button {
+  background: transparent;
+  border: none;
+}
+#moveBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+#moveBtn p {
+  color: white;
+}
+#next,
+#prev {
+  cursor: pointer;
+  background-color: #56322ff7;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+#closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 6px;
+  border: none;
+  border-radius: 50%;
+}
+#closeBtn:hover {
+  background-color: #0c2e3a;
+}
+#imgWin {
+  width: 500px;
+  height: 350px;
+  margin: 45px 0;
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+  section h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+  header,
+  section,
+  footer {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 480px) {
+  header,
+  section,
+  footer {
+    padding: 0 10px;
+  }
+  img {
+    margin: 4px 4px;
+  }
+  #imgWin {
+    width: 300px;
+    height: 375px;
+    margin: 35px 0;
+  }
+  dialog {
+    padding: 20px 20px;
+  }
+}
