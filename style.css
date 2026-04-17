@@ -43,6 +43,11 @@ section p {
   font-size: 56px;
   text-align: center;
 }
+.img-btn {
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;
