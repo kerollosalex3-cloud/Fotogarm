@@ -151,7 +151,7 @@ dialog {
   header {
     justify-content: center;
   }
-  section h1 {
+  section p {
     font-size: 48px;
     text-align: center;
   }
