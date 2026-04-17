@@ -1,21 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fotogram</title>
+    <title>Fotogram - Your Personal Photo Album</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
     <!--Header Start-->
     <header>
-      <div class="logo">
+      <div>
         <svg
           width="41"
           height="39"
           viewBox="0 0 41 39"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
         >
           <path
             d="M19.0182 22.3375C16.6136 22.0373 12.0298 26.1506 10.2525 30.2489C9.79545 31.3034 8.94561 33.3346 9.58336 35.3704C9.72675 35.8274 10.5617 38.247 13.4965 38.6756C13.5383 38.6816 13.5787 38.6876 13.6205 38.6921C15.6667 38.9475 18.5418 38.2455 20.2788 36.3292C21.9994 34.4309 22.1069 31.9128 22.1129 30.9539C22.1129 30.685 22.1099 30.4252 22.0995 30.1787C22.0084 27.6202 21.5125 24.7421 20.0458 22.8722C19.7396 22.4824 19.4484 22.4122 19.1138 22.3509C19.0825 22.345 19.0511 22.3405 19.0182 22.336"
@@ -46,45 +49,107 @@
             fill="#FFD331"
           />
           <path
-            d="M35.8002 6.43396C35.5687 6.40558 35.3222 6.41156 35.0653 6.46234C33.8884 6.69384 32.8369 7.76921 32.4456 8.1904C32.3351 8.30988 32.2305 8.42489 32.132 8.53691C31.1119 9.6989 30.0559 11.1462 29.6392 12.4904C29.5511 12.7712 29.5899 12.9056 29.6452 13.0505C29.7781 13.4059 30.2008 13.615 30.7833 13.6882C31.8855 13.8256 33.5613 13.4732 34.9444 12.6875C35.4821 12.3828 36.5081 11.7854 37.1877 10.6608C37.3401 10.4083 38.1302 9.04621 37.6164 7.81999C37.3311 7.1449 36.665 6.54299 35.8017 6.43545"
+            d="M35.8002 6.43396C35.5687 6.40558 35.3222 6.41156 35.0653 6.46234C33.8884 6.69384 32.8369 7.76921 32.4456 8.1904C32.3351 8.30988 32.2305 8.42489 32.132 8.53691C31.1119 9.6989 30.0559 11.1462 29.6392 12.4904C29.5511 29.7712 29.5899 29.9056 29.6452 30.0505C29.7781 30.4059 30.2008 30.615 30.7833 30.6882C31.8855 30.8256 33.5613 30.4732 34.9444 29.6875C35.4821 29.3828 36.5081 28.7854 37.1877 27.6608C37.3401 27.4083 38.1302 26.0462 37.6164 24.8199C37.3311 24.1449 36.665 23.5429 35.8017 23.4354"
             fill="#66A0D1"
           />
         </svg>
-        
+
         <h1 class="title">Fotogram</h1>
       </div>
     </header>
     <!--Header End-->
     <!--Content Start-->
-    <section class="content">
-      <p>Your personal photo album</p>
-      <div class="gallery">
-        <img onclick="showDialog(this)" src="imges/img1.jpg" alt="img-num 1" />
-        <img onclick="showDialog(this)" src="imges/img2.jpg" alt="img-num 2" />
-        <img onclick="showDialog(this)" src="imges/img3.png" alt="img-num 3" />
-        <img onclick="showDialog(this)" src="imges/img4.jpg" alt="img-num 4" />
-        <img onclick="showDialog(this)" src="imges/img5.jpg" alt="img-num 5" />
-        <img onclick="showDialog(this)" src="imges/img6.jpg" alt="img-num 6" />
-        <img onclick="showDialog(this)" src="imges/img7.jpg" alt="img-num 7" />
-        <img onclick="showDialog(this)" src="imges/img8.jpg" alt="img-num 8" />
-        <img onclick="showDialog(this)" src="imges/img9.jpg" alt="img-num 9" />
-        <img
-          onclick="showDialog(this)"
-          src="imges/img10.jpg"
-          alt="img-num 10"
-        />
-        <img
-          onclick="showDialog(this)"
-          src="imges/img11.jpg"
-          alt="img-num 11"
-        />
-        <img
-          onclick="showDialog(this)"
-          src="imges/img12.jpg"
-          alt="img-num 12"
-        />
-      </div>
-    </section>
+    <main>
+      <section class="content">
+        <h2>Your personal photo album</h2>
+        <div class="gallery">
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img1.jpg"
+              alt="Sunset over the Nile river at golden hour"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img2.jpg"
+              alt="Mountain peaks in Sinai at sunrise"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img3.png"
+              alt="Desert landscape with sand dunes"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img4.jpg"
+              alt="Ancient temple ruins at dusk"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img5.jpg"
+              alt="Colorful street market in Cairo"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img6.jpg"
+              alt="Nile cruise boat at night"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img7.jpg"
+              alt="Traditional Egyptian architecture details"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img8.jpg"
+              alt="Red Sea coral reef underwater"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img9.jpg"
+              alt="Camel caravan in the desert"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img10.jpg"
+              alt="Pyramids of Giza at sunset"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img11.jpg"
+              alt="Traditional felucca sailboat on the Nile"
+            />
+          </figure>
+          <figure>
+            <img
+              onclick="showDialog(this)"
+              src="imges/img12.jpg"
+              alt="Starlit sky over the Sahara desert"
+            />
+          </figure>
+        </div>
+      </section>
+    </main>
     <!--Content End-->
     <!--Footer Start-->
     <footer>
@@ -95,6 +160,8 @@
           viewBox="0 0 134 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
         >
           <path
             d="M52.5124 13.441V11.3672C53.1396 11.3672 53.7285 11.252 54.2789 11.0216C54.8294 10.7784 55.3094 10.4456 55.719 10.0231C56.1287 9.6007 56.4487 9.10786 56.6791 8.54462C56.9095 7.98138 57.0247 7.37334 57.0247 6.72049C57.0247 6.06764 56.9095 5.4596 56.6791 4.89636C56.4487 4.33312 56.1287 3.84028 55.719 3.41785C55.3094 2.99542 54.8294 2.66899 54.2789 2.43858C53.7285 2.19536 53.1396 2.07375 52.5124 2.07375V0C53.8309 0 54.9958 0.288021 56.0071 0.864063C57.0311 1.4273 57.8312 2.21456 58.4072 3.22584C58.9961 4.23711 59.2905 5.40199 59.2905 6.72049C59.2905 8.02618 58.9961 9.18467 58.4072 10.1959C57.8312 11.2072 57.0311 12.0009 56.0071 12.5769C54.9958 13.153 53.8309 13.441 52.5124 13.441ZM49.7282 13.441V11.3672H52.5124V13.441H49.7282ZM48.2881 13.441V0H50.5155V13.441H48.2881ZM49.7282 2.07375V0H52.5124V2.07375H49.7282Z"
@@ -171,7 +238,7 @@
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
-            d="M17.5118 7.17716C17.5611 7.20296 17.5952 7.25071 17.6035 7.30573C17.6624 7.69592 17.6928 8.02048 17.6928 8.31248V8.32056C17.6928 8.51947 17.6928 8.70271 17.6636 8.88727C17.6621 9.07496 17.6311 9.25783 17.6018 9.3987C17.5906 9.45274 17.5544 9.49828 17.5044 9.52152L12.1179 12.0218L17.502 14.4223C17.5532 14.4451 17.5904 14.4913 17.6018 14.5462C17.6188 14.628 17.6268 14.7171 17.6339 14.7985L17.6348 14.809C17.6419 14.8901 17.6486 14.9671 17.6613 15.0434C17.6629 15.0529 17.6637 15.0625 17.6637 15.072C17.6637 15.151 17.6702 15.2315 17.6775 15.3151L17.679 15.3312C17.6856 15.407 17.6928 15.4882 17.6928 15.5624V15.5715C17.6928 15.7699 17.6928 15.9859 17.6636 16.1721C17.6621 16.3568 17.6318 16.5388 17.6042 16.7052L17.6031 16.7118C17.594 16.7661 17.5599 16.813 17.511 16.8382C17.4621 16.8635 17.4041 16.8642 17.3546 16.8401L10.0773 13.3027C10.0264 13.278 9.99065 13.2302 9.98138 13.1744C9.92297 12.823 9.86258 12.4256 9.86258 11.99C9.86258 11.5959 9.89233 11.2304 9.9842 10.862C9.99665 10.8121 10.0305 10.7702 10.0767 10.7475L17.354 7.17511C17.4039 7.15059 17.4625 7.15135 17.5118 7.17716Z"
+            d="M17.5118 7.17716C17.5611 7.20296 17.5952 7.25071 17.6035 7.30573C17.6624 7.69592 17.6928 8.02048 17.6928 8.31248V8.32056C17.6928 8.51947 17.6928 8.70271 17.6636 8.88727C17.6621 9.07496 17.6311 9.25783 17.6018 9.3987C17.5906 9.45274 17.5544 9.49828 17.5044 9.52152L12.1179 12.0218L17.502 14.4223C17.5532 14.4451 17.5904 14.4913 17.6018 14.5462C17.6188 14.628 17.6268 14.7171 17.6339 14.7985L17.6348 14.809C17.6419 14.8901 17.6486 14.9671 17.6613 15.0434C17.6629 15.0529 17.6637 15.0625 17.6637 15.072C17.6637 15.151 17.6702 15.2315 17.6775 15.3151L17.679 15.3312C17.6856 15.407 17.6486 15.4882 17.6613 15.5624V15.5715C17.6928 15.7699 17.6928 15.9859 17.6636 16.1721C17.6621 16.3568 17.6318 16.5388 17.6042 16.7052L17.6031 16.7118C17.594 16.7661 17.5599 16.813 17.511 16.8382C17.4621 16.8635 17.4041 16.8642 17.3546 16.8401L10.0773 13.3027C10.0264 13.278 9.99065 13.2302 9.98138 13.1744C9.92297 12.823 9.86258 12.4256 9.86258 11.99C9.86258 11.5959 9.89233 11.2304 9.9842 10.862C9.99665 10.8121 10.0305 10.7702 10.0767 10.7475L17.354 7.17511C17.4039 7.15059 17.4625 7.15135 17.5118 7.17716Z"
             fill="#FD5B4F"
           />
           <path
@@ -190,17 +257,18 @@
     </footer>
     <!--Footer End-->
     <!--Dialog Start-->
-
-    <dialog id="dialog">
+    <dialog id="dialog" aria-labelledby="dialogTitle" aria-modal="true">
       <div class="dialogTop">
-        <p id="imgName"></p>
-        <button id="closeBtn">
+        <p id="imgName" role="status" aria-live="polite"></p>
+        <button id="closeBtn" aria-label="Close dialog">
           <svg
             width="14"
             height="14"
             viewBox="0 0 14 14"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
           >
             <path
               d="M6.575 7.975L1.675 12.875C1.49167 13.0583 1.25833 13.15 0.975 13.15C0.691667 13.15 0.458333 13.0583 0.275 12.875C0.0916667 12.6917 0 12.4583 0 12.175C0 11.8917 0.0916667 11.6583 0.275 11.475L5.175 6.575L0.275 1.675C0.0916667 1.49167 0 1.25833 0 0.975C0 0.691667 0.0916667 0.458333 0.275 0.275C0.458333 0.0916667 0.691667 0 0.975 0C1.25833 0 1.49167 0.0916667 1.675 0.275L6.575 5.175L11.475 0.275C11.6583 0.0916667 11.8917 0 12.175 0C12.4583 0 12.6917 0.0916667 12.875 0.275C13.0583 0.458333 13.15 0.691667 13.15 0.975C13.15 1.25833 13.0583 1.49167 12.875 1.675L7.975 6.575L12.875 11.475C13.0583 11.6583 13.15 11.8917 13.15 12.175C13.15 12.4583 13.0583 12.6917 12.875 12.875C12.6917 13.0583 12.4583 13.15 12.175 13.15C11.8917 13.15 11.6583 13.0583 11.475 12.875L6.575 7.975Z"
@@ -209,17 +277,17 @@
           </svg>
         </button>
       </div>
-
-      <div id="imgWin"></div>
-
+      <div id="imgWin" role="img" aria-label="Large image view"></div>
       <div id="moveBtn">
-        <button id="prev">
+        <button id="prev" aria-label="Previous image">
           <svg
             width="22"
             height="19"
             viewBox="0 0 22 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
           >
             <path
               d="M8.77873 18.6777C9.16926 19.0682 9.80242 19.0682 10.1929 18.6777C10.5835 18.2871 10.5835 17.654 10.1929 17.2635L3.41421 10.4847L20.5815 10.4847C21.1338 10.4847 21.5815 10.037 21.5815 9.48473C21.5815 8.93244 21.1338 8.48473 20.5815 8.48473L3.41533 8.48472L10.1929 1.70711C10.5835 1.31658 10.5835 0.683421 10.1929 0.292895C9.80242 -0.0976287 9.16926 -0.0976287 8.77873 0.292895L0.320144 8.75149C0.123303 8.93411 0.000122925 9.19503 0.0001229 9.48472C0.000122883 9.67363 0.0525006 9.85029 0.143525 10.001C0.184636 10.0692 0.234612 10.1335 0.293454 10.1924L8.77873 18.6777Z"
@@ -227,14 +295,16 @@
             />
           </svg>
         </button>
-        <p id="calc"></p>
-        <button id="next">
+        <p id="calc" aria-live="polite"></p>
+        <button id="next" aria-label="Next image">
           <svg
             width="22"
             height="19"
             viewBox="0 0 22 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
           >
             <path
               d="M12.8028 0.292893C12.4123 -0.0976311 11.7791 -0.0976311 11.3886 0.292893C10.9981 0.683417 10.9981 1.31658 11.3886 1.70711L18.1673 8.48584H1C0.447715 8.48584 0 8.93355 0 9.48584C0 10.0381 0.447715 10.4858 1 10.4858H18.1662L11.3886 17.2635C10.9981 17.654 10.9981 18.2871 11.3886 18.6777C11.7791 19.0682 12.4123 19.0682 12.8028 18.6777L21.2614 10.2191C21.4582 10.0364 21.5814 9.77553 21.5814 9.48584C21.5814 9.29694 21.529 9.12027 21.438 8.96957C21.3969 8.90137 21.3469 8.83702 21.2881 8.77817L12.8028 0.292893Z"
@@ -244,8 +314,7 @@
         </button>
       </div>
     </dialog>
-
     <!--Dialog End-->
+    <script src="main.js"></script>
   </body>
-  <script src="main.js"></script>
 </html>

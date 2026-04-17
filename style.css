@@ -21,10 +21,12 @@ header {
   background: #09212a;
   height: 81px;
 }
-.title {
+.logo {
   display: flex;
   align-items: center;
   gap: 3px;
+}
+.title {
   color: white;
 }
 section {
@@ -34,7 +36,7 @@ section {
   gap: 50px;
   margin-top: 15%;
 }
-section h1 {
+section p {
   font-family: "Figtree";
   font-weight: 800;
   color: white;
