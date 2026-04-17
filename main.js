@@ -1,85 +1,96 @@
-let gallery = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
+const imgWin = document.getElementById("imgWin");
+const dialog = document.getElementById("dialog");
+const calc = document.getElementById("calc");
+const closeBtn = document.getElementById("closeBtn");
+const imgNameEl = document.getElementById("imgName");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
 
-let images = [
-  { src: "imges/img1.jpg", alt: "Image 1" },
-  { src: "imges/img2.jpg", alt: "Image 2" },
-  { src: "imges/img3.png", alt: "Image 3" },
-  { src: "imges/img4.jpg", alt: "Image 4" },
-  { src: "imges/img5.jpg", alt: "Image 5" },
-  { src: "imges/img6.jpg", alt: "Image 6" },
-  { src: "imges/img7.jpg", alt: "Image 7" },
-  { src: "imges/img8.jpg", alt: "Image 8" },
-  { src: "imges/img9.jpg", alt: "Image 9" },
-  { src: "imges/img10.jpg", alt: "Image 10" },
-  { src: "imges/img11.jpg", alt: "Image 11" },
-  { src: "imges/img12.jpg", alt: "Image 12" },
+const images = [
+  { src: "imges/img1.jpg", alt: "Türkisfarbener Gletschersee mit Eisbergen und Bergen" },
+  { src: "imges/img2.jpg", alt: "Regnerische Straße in Japan bei Nacht mit Neonlichtern" },
+  { src: "imges/img3.png", alt: "Dunkle Gewitterwolken am Himmel" },
+  { src: "imges/img4.jpg", alt: "Blaumeise auf einem Ast" },
+  { src: "imges/img5.jpg", alt: "Wirbelsturm über der Erde aus dem Weltraum" },
+  { src: "imges/img6.jpg", alt: "Ruhiger See mit schneebedeckten Bergen und Spiegelung" },
+  { src: "imges/img7.jpg", alt: "Ente mit ausgebreiteten Flügeln auf dem Wasser" },
+  { src: "imges/img8.jpg", alt: "Person steht nachts auf einem Felsen am Meer unter Sternenhimmel" },
+  { src: "imges/img9.jpg", alt: "Kleiner weiß-brauner Vogel sitzt auf einem Felsen" },
+  { src: "imges/img10.jpg", alt: "Zwei junge Schneeleoparden auf einem Felsen" },
+  { src: "imges/img11.jpg", alt: "Schneebedeckte Berge unter blauem Himmel" },
+  { src: "imges/img12.jpg", alt: "Einzelner verschneiter Baum in Winterlandschaft" },
 ];
-
-for (var i = 0; i < images.length; i++) {
-  gallery.innerHTML += getImageTemplate(i);
-}
-
-function getImageTemplate(index) {
-  return (
-    '<button class="img-btn" onclick="showDialog(' +
-    index +
-    ')">' +
-    '<img src="' +
-    images[index].src +
-    '" alt="' +
-    images[index].alt +
-    '">' +
-    "</button>"
-  );
-}
-let imgWin = document.getElementById("imgWin");
-let dialog = document.getElementById("dialog");
-let calc = document.getElementById("calc");
-let closeBtn = document.getElementById("closeBtn");
-let imgNameEl = document.getElementById("imgName");
 
 let currentIndex = 0;
 
-function showDialog(index) {
-  showImageByIndex(index);
+document.addEventListener("DOMContentLoaded", () => {
+  renderGallery();
+  setupEventListeners();
+});
+
+function renderGallery() {
+  for (let i = 0; i < images.length; i++) {
+    gallery.innerHTML += getImageTemplate(i);
+  }
 }
 
-function showImageByIndex(index) {
+function getImageTemplate(index) {
+  return `
+    <button class="img-btn" onclick="showDialog(${index})">
+      <img src="${images[index].src}" alt="${images[index].alt}">
+    </button>
+  `;
+}
+
+function setupEventListeners() {
+  nextBtn.addEventListener("click", () => showNextImage());
+  prevBtn.addEventListener("click", () => showPrevImage());
+  closeBtn.addEventListener("click", () => dialog.close());
+  
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      dialog.close();
+    }
+  });
+}
+
+function showDialog(index) {
+  updateCurrentIndex(index);
+  openDialog();
+  displayImage();
+}
+
+function updateCurrentIndex(index) {
   if (index >= images.length) {
-    index = 0;
+    currentIndex = 0;
   } else if (index < 0) {
-    index = images.length - 1;
+    currentIndex = images.length -1;
+  } else {
+    currentIndex = index;
   }
+}
 
-  currentIndex = index;
-
+function openDialog() {
   if (!dialog.open) {
     dialog.showModal();
   }
+}
 
-  imgWin.style.backgroundImage = "url(" + images[currentIndex].src + ")";
-  imgWin.style.backgroundSize = "cover";
-  imgWin.style.backgroundPosition = "center";
-  imgWin.style.height = "350px";
-  imgWin.style.width = "500px";
-  imgWin.style.margin = "45px 0";
-
-  calc.textContent = (currentIndex + 1) + "/" + images.length;
+function displayImage() {
+  imgWin.className = "img-display";
+  imgWin.style.backgroundImage = `url(${images[currentIndex].src})`;
+  
+  calc.textContent = `${currentIndex + 1}/${images.length}`;
   imgNameEl.textContent = images[currentIndex].alt;
 }
 
-document.getElementById("next").addEventListener("click", () => {
-  showImageByIndex(currentIndex + 1);
-});
+function showNextImage() {
+  updateCurrentIndex(currentIndex + 1);
+  displayImage();
+}
 
-document.getElementById("prev").addEventListener("click", () => {
-  showImageByIndex(currentIndex - 1);
-});
-closeBtn.addEventListener("click", () => {
-  dialog.close();
-});
-dialog.addEventListener("click", (e) => {
-  if (e.target === dialog) {
-    dialog.close();
-  }
-});
+function showPrevImage() {
+  updateCurrentIndex(currentIndex - 1);
+  displayImage();
+}
