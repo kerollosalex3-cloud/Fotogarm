@@ -68,7 +68,6 @@ img:hover {
   border: 2px solid #6bc1e1;
 }
 footer {
-  margin-top: 100px;
   position: relative;
   bottom: 0;
   display: flex;
@@ -88,32 +87,34 @@ footer p {
   gap: 15px;
 }
 dialog {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto;
-  max-width: fit-content;
+  width: 580px;
   height: fit-content;
   border-radius: 40px;
-  padding: 40px;
+  padding: 40px 0;
   background-color: #09212a;
+  overflow: hidden;
 }
 dialog:not([open]) {
   display: none;
 }
 .dialogTop {
+  width: 100%;
+
   display: flex;
-  flex-wrap: wrap-reverse;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .imgName-div {
-  max-width: 450px;
+  width: 450px;
 }
 .dialogTop p {
-  display: inline-block;
+  align-self: center;
   font-family: "Figtree";
   font-size: 24px;
   font-weight: 700;
@@ -142,6 +143,9 @@ dialog:not([open]) {
   border-radius: 50%;
 }
 #closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,9 +158,9 @@ dialog:not([open]) {
   background-color: #0c2e3a;
 }
 #imgWin {
-  width: 500px;
-  height: 350px;
-  margin: 45px 0;
+  width: 440px;
+  height: 323px;
+  margin: 35px 0;
 }
 .img-display {
   width: 500px;
@@ -182,47 +186,59 @@ dialog:not([open]) {
   footer {
     padding: 0 50px;
   }
+  section {
+    padding: 100px 0;
+  }
+  dialog {
+    width: 500px;
+  }
+  #imgWin {
+    width: 420px;
+    height: 320px;
+    margin: 35px 0;
+  }
 }
+
 @media (max-width: 480px) {
   header,
   section,
   footer {
     padding: 0 10px;
   }
-  img {
-    margin: 4px 4px;
+  dialog {
+    padding: 20px;
+    width: 320px;
   }
   #imgWin {
-    width: 300px;
-    height: 375px;
-    margin: 35px 0;
+    width: 280px;
+    height: 220px;
+    margin: 20px 0;
   }
-  dialog {
-    padding: 20px 20px;
-  }
-  .img-display {
-    width: 100%;
-    max-width: 300px;
-    height: 250px;
-    margin: 25px 0;
-  }
-
   #moveBtn {
     gap: 30px;
   }
-
   #next,
   #prev {
     width: 50px;
     height: 50px;
   }
-}
-@media (max-width: 320px) {
-  .img-display {
-    height: 200px;
-  }
-
   #imgName {
     font-size: 18px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 320px) {
+  dialog {
+    width: 280px;
+    padding: 15px;
+  }
+  #imgWin {
+    width: 240px;
+    height: 180px;
+  }
+  #imgName {
+    font-size: 16px;
+    max-width: 180px;
   }
 }

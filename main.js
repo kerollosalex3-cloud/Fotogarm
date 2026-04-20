@@ -44,7 +44,6 @@ const images = [
 ];
 
 let currentIndex = 0;
-window.onload = init;
 
 function init() {
   renderGallery();
@@ -68,13 +67,20 @@ function setupEventListeners() {
   dialog.addEventListener("click", (e) => {
     if (e.target === dialog) {
       dialog.close();
+      document.body.style.overflow = "visible";
     }
   });
+}
+function openDialog() {
+  if (!dialog.open) {
+    dialog.showModal();
+    document.body.style.overflow = "hidden";
+  }
 }
 
 function closeDialog() {
   dialog.close();
-  document.body.style.overflow = "";
+  document.body.style.overflow = "visible";
 }
 
 function navigate(direction) {
@@ -95,13 +101,6 @@ function updateCurrentIndex(index) {
     currentIndex = images.length - 1;
   } else {
     currentIndex = index;
-  }
-}
-
-function openDialog() {
-  if (!dialog.open) {
-    dialog.showModal();
-    document.body.style.overflow = "hidden";
   }
 }
 
