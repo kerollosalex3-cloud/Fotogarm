@@ -34,7 +34,8 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 50px;
-  margin-top: 15%;
+  min-height: calc(100vh - 458px);
+  padding: 120px 0;
 }
 section p {
   font-family: "Figtree";
@@ -87,13 +88,19 @@ footer p {
   gap: 15px;
 }
 dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: auto;
   max-width: fit-content;
   height: fit-content;
-
   border-radius: 40px;
   padding: 40px;
   background-color: #09212a;
+}
+dialog:not([open]) {
+  display: none;
 }
 .dialogTop {
   display: flex;
@@ -101,13 +108,12 @@ dialog {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
 }
-.imgName-div{
-max-width: 450px;
+.imgName-div {
+  max-width: 450px;
 }
 .dialogTop p {
- display: inline-block;
+  display: inline-block;
   font-family: "Figtree";
   font-size: 24px;
   font-weight: 700;
